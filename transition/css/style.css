@@ -1,0 +1,80 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box, .box-2{
+  opacity: 1;
+  width: 150px;
+  height: 150px;
+  background-color: red;
+}
+
+.box:hover{
+  background-color: blue;
+  width: 300px;
+  transition: width 2s linear 3s;
+
+  /* linear/ease-in/ease-out per accelerazione o movimento lineare */
+
+  /* quindi abbiamo 4 valori: la proprietà a cui applicare transition, il tempo che ci deve mettere, la velocità e il delay */
+}
+
+.box:active{
+  opacity: 0;
+}
+
+.box-2{
+  position: absolute;
+  top: 200px;
+  left: 0;
+  animation-name: color-change, move;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+  animation-direction: reverse;
+
+  /* shorthand --> animation: name duration  */
+}
+
+@keyframes color-change{
+  0%{
+    background-color: red;
+  }
+  25%{
+    background-color: blue;
+  }
+  50%{
+    background-color: yellow;
+  }
+  75%{
+    background-color: green;
+  }
+  100%{
+    background-color: red;
+  }
+}
+
+@keyframes move{
+  0%{
+    left: 0;
+    top: 200px;
+  }
+  25%{
+    top: calc(100% - 150px);
+    left: calc(100% - 150px);
+  }
+  50%{
+    left: calc(100% - 150px);
+    top: calc(100% - 150px);
+  }
+  75%{
+    left: 0;
+    top: calc(100% - 150px);
+  }
+  100%{
+    left: 0;
+    top: 200px;
+  }
+}

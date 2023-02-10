@@ -1,0 +1,6 @@
+h1{
+  font-size: clamp(1.5rem, calc(0.5rem + 3vw), 2.5rem)
+  
+  /* font non scenderà mai sotto 1.5rem e non sarà mai più grande di 2.5rem */
+  /* in mezzo si comporta come nella formula */
+}
